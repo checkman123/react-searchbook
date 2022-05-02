@@ -4,7 +4,6 @@ import "./BookCard.css";
 const bookCard = ({ book, addBook }) => {
   const addToWishList = () => {
     addBook(book);
-    console.log(book);
   };
 
   const image = book?.imageLinks?.thumbnail;
