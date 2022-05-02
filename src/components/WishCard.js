@@ -6,13 +6,23 @@ const WishCard = ({ book, deleteBook }) => {
     deleteBook(book);
   };
 
+  let pathname = window.location.pathname;
+
   return (
     <>
       <li className="wish-card__container">
         <div>{book.title}</div>
-        <button className="wish-card__button" onClick={deleteFromWishList}>
-          DELETE
-        </button>
+
+        {
+          //if in wishlist, hide delete button
+          pathname === "/wishlist" ? (
+            ""
+          ) : (
+            <button className="wish-card__button" onClick={deleteFromWishList}>
+              DELETE
+            </button>
+          )
+        }
       </li>
     </>
   );
