@@ -8,9 +8,11 @@ const WishCard = ({ book, deleteBook }) => {
 
   return (
     <>
-      <li className="wish-card__container" onClick={deleteFromWishList}>
+      <li className="wish-card__container">
         <div>{book.title}</div>
-        <button className="wish-card__button">X</button>
+        <button className="wish-card__button" onClick={deleteFromWishList}>
+          DELETE
+        </button>
       </li>
     </>
   );

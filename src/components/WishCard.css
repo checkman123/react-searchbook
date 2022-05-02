@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    line-height: 40px;
 }
 
 .wish-card__container:hover{
@@ -14,6 +15,6 @@ li:nth-child(even){
 
 .wish-card__button{
     padding: 0;
-border: none;
-background: none;
+    background: none;
+    width:25%;
 }
