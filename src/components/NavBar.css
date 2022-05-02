@@ -1,0 +1,17 @@
+.navbar__container {
+    display:flex;
+    padding: 30px;
+    background-color: rgb(186, 216, 243);
+}
+
+.navbar__link{
+    margin-right: 30px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size:25px;
+}
+
+.navbar__link:hover{
+    text-decoration: underline;
+}

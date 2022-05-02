@@ -1,0 +1,12 @@
+.search__container{
+    margin: 20px 10px;
+}
+
+.search__input{
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.search_loading{
+    margin-left: 20px;
+}

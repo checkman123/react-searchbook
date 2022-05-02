@@ -1,0 +1,19 @@
+.wish-card__container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.wish-card__container:hover{
+    background-color: rgb(194, 194, 194);
+}
+
+li:nth-child(even){
+    background-color: rgb(235, 235, 235);
+}
+
+.wish-card__button{
+    padding: 0;
+border: none;
+background: none;
+}

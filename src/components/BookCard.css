@@ -1,0 +1,32 @@
+.book-card__container{
+    display: flex;
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+.book-card__container p{
+    margin:0px;
+    margin-bottom:10px;
+    font-weight: bold;
+}
+
+.book-card__container span{
+    font-weight: normal;
+}
+
+.book-card__container:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.book-card__info{
+    margin-left: 20px;
+}
+
+img{
+    object-fit: cover;
+    width:150px;
+    height:210px;
+}
