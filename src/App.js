@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "./components/HomePage";
@@ -22,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
       <NavBar />
       <Routes>
         <Route
