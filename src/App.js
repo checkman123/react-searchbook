@@ -11,8 +11,6 @@ function App() {
     //check if the book exist in wish list
     if (!wishList.some((item) => item.id === book.id)) {
       setWishList([...wishList, book]);
-    } else {
-      alert(book.title + " already exist in wish list");
     }
   };
 
