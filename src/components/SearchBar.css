@@ -10,3 +10,17 @@
 .search_loading{
     margin-left: 20px;
 }
+
+.search-wish__container{
+    display:flex;
+    flex-direction:row;
+    gap: 20px;
+}
+
+.search-wish-list__container{
+    width:50%;
+}
+
+.search-result__container{
+    width:50%;
+}

@@ -24,7 +24,13 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<HomePage wishList={wishList} addBook={addBook} />}
+          element={
+            <HomePage
+              wishList={wishList}
+              addBook={addBook}
+              deleteBook={deleteBook}
+            />
+          }
         />
         <Route
           path="/wishlist"

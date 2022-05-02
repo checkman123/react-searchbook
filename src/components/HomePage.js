@@ -1,10 +1,14 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 
-const HomePage = ({ addBook }) => {
+const HomePage = ({ wishList, addBook, deleteBook }) => {
   return (
     <>
-      <SearchBar addBook={addBook} />
+      <SearchBar
+        wishList={wishList}
+        addBook={addBook}
+        deleteBook={deleteBook}
+      />
     </>
   );
 };
