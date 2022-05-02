@@ -16,5 +16,5 @@ li:nth-child(even){
 .wish-card__button{
     padding: 0;
     background: none;
-    width:25%;
+    width:200px;
 }
