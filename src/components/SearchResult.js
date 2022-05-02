@@ -7,7 +7,7 @@ const SearchResult = ({ books, addBook }) => {
       {books?.map((book) => (
         <BookCard
           key={book.id}
-          book={{ ...book.volumeInfo }}
+          book={{ id: book.id, ...book.volumeInfo }}
           addBook={addBook}
         />
       ))}
