@@ -10,7 +10,7 @@ const SearchBar = ({ addBook }) => {
 
   //fetch books
   useEffect(() => {
-    if (input === "") {
+    if (debounceInput === "") {
       //No search, show all books
       fetch(
         "https://www.googleapis.com/books/v1/volumes?q=bookname&startIndex=0&maxResults=20"
@@ -22,7 +22,7 @@ const SearchBar = ({ addBook }) => {
     } else {
       //Search books according to the input
       fetch(
-        `https://www.googleapis.com/books/v1/volumes?q="${input}"&startIndex=0&maxResults=20`
+        `https://www.googleapis.com/books/v1/volumes?q="${debounceInput}"&startIndex=0&maxResults=20`
       )
         .then((response) => response.json())
         .then((data) => {
