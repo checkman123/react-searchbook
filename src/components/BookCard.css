@@ -5,6 +5,7 @@
     border: 1px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     cursor: pointer;
+
 }
 
 .book-card__container p{
@@ -23,6 +24,9 @@
 
 .book-card__info{
     margin-left: 20px;
+    overflow:auto;
+    display: block;
+    height: 210px;
 }
 
 img{
@@ -30,3 +34,24 @@ img{
     width:150px;
     height:210px;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
