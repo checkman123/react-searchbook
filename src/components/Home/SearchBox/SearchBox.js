@@ -46,8 +46,8 @@ const Searchbox = ({ handleSubmit }) => {
         className="search-box__input"
         placeholder="Search Book..."
       />
-      <button className="search-box__button" onClick={handleClick}>
-        submit
+      <button className="search-box__button btn-3" onClick={handleClick}>
+        <span>SEARCH</span>
       </button>
     </div>
   );
