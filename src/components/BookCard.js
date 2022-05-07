@@ -12,7 +12,7 @@ const bookCard = ({ book, addBook }) => {
     <>
       <div className="book-card__container" onClick={addToWishList}>
         <div className="book-card__img">
-          <img src={image} alt="some-thumbnail" />
+          <img src={image} alt={book.title} />
         </div>
         <div className="book-card__info">
           <p>
