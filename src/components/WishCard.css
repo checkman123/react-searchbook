@@ -18,3 +18,10 @@ li:nth-child(even){
     background: none;
     width:200px;
 }
+
+.wish-card__title{
+    width: 65%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -11,7 +11,7 @@ const WishCard = ({ book, deleteBook }) => {
   return (
     <>
       <li className="wish-card__container">
-        <div>{book.title}</div>
+        <div className="wish-card__title">{book.title}</div>
 
         {
           //if in wishlist, hide delete button
