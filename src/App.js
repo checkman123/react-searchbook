@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import HomePage from "./components/HomePage";
-import NavBar from "./components/NavBar";
-import WishList from "./components/WishList";
+import HomePage from "./components/Home/HomePage";
+import NavBar from "./components/NavBar/NavBar";
+import WishList from "./components/WishList/WishList";
 
 function App() {
   //get wishlist from local storage. return [] if not exist

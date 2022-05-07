@@ -3,7 +3,7 @@ import SearchResult from "./SearchResult";
 import { useEffect, useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({ wishList, addBook, deleteBook }) => {
+const SearchBar = ({ addBook, handleSubmit }) => {
   const [input, setInput] = useState("");
   const [debounceInput, setDebounceInput] = useState("");
   const [books, setBooks] = useState([]);
@@ -47,16 +47,21 @@ const SearchBar = ({ wishList, addBook, deleteBook }) => {
     setInput(e.target.value);
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    handleSubmit(input);
+  };
   return (
     <>
+      <input
+        type="text"
+        value={input}
+        onChange={onChangeHandler}
+        className="search__input"
+        placeholder="Enter book name..."
+      />
+      <button onClick={handleClick}>submit</button>
       <div className="search__container">
-        <input
-          type="text"
-          value={input}
-          onChange={onChangeHandler}
-          className="search__input"
-          placeholder="Enter book name..."
-        />
         {
           //No books, show loading text
           books?.length !== 0 ? (
