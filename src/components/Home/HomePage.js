@@ -4,6 +4,7 @@ import WishList from "../WishList/WishList";
 import "./HomePage.css";
 import { searchbook } from "../../apis/searchbook";
 import Pagination from "../Pagination/Pagination";
+import Searchbox from "./SearchBox/SearchBox";
 
 const HomePage = ({ wishList, addBook, deleteBook }) => {
   const [items, setItems] = useState([]);
@@ -20,16 +21,26 @@ const HomePage = ({ wishList, addBook, deleteBook }) => {
 
   useEffect(() => {
     (async () => {
-      if (keyword === "") return;
-      const result = await searchbook(keyword, currentPage, 5);
-      if (result?.data?.totalItems !== undefined) {
-        setTotalItems(result.data.totalItems);
-      }
-      if (result?.data?.items !== undefined) {
-        setItems(result.data.items);
-      }
+      if (keyword === "") {
+        //Empty show search that have a in the book title
+        const result = await searchbook("a", currentPage, 5);
+        if (result?.data?.totalItems !== undefined) {
+          setTotalItems(result.data.totalItems);
+        }
+        if (result?.data?.items !== undefined) {
+          setItems(result.data.items);
+        }
+      } else {
+        const result = await searchbook(keyword, currentPage, 5);
+        if (result?.data?.totalItems !== undefined) {
+          setTotalItems(result.data.totalItems);
+        }
+        if (result?.data?.items !== undefined) {
+          setItems(result.data.items);
+        }
 
-      window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
+      }
     })();
   }, [currentPage, keyword]);
 
@@ -49,22 +60,26 @@ const HomePage = ({ wishList, addBook, deleteBook }) => {
   };
 
   return (
-    <Pagination
-      currentPage={currentPage}
-      totalItems={totalItems}
-      itemsPerPage={5}
-      handleChangePage={handleChangePage}
-    >
-      <div className="home__container">
-        <SearchBar
-          wishList={wishList}
-          addBook={addBook}
-          deleteBook={deleteBook}
-          handleSubmit={handleSubmit}
-        />
-        <WishList wishList={wishList} deleteBook={deleteBook} />
-      </div>
-    </Pagination>
+    <>
+      <Searchbox handleSubmit={handleSubmit} />
+
+      <Pagination
+        currentPage={currentPage}
+        totalItems={totalItems}
+        itemsPerPage={5}
+        handleChangePage={handleChangePage}
+      >
+        <div className="home__container">
+          <SearchBar
+            books={items}
+            wishList={wishList}
+            addBook={addBook}
+            deleteBook={deleteBook}
+          />
+          <WishList wishList={wishList} deleteBook={deleteBook} />
+        </div>
+      </Pagination>
+    </>
   );
 };
 
