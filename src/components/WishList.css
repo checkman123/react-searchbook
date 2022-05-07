@@ -1,3 +1,9 @@
 .wish-list__title{
     margin-left:30px;
 }
+
+.wish-list__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

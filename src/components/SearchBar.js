@@ -2,7 +2,6 @@ import React from "react";
 import SearchResult from "./SearchResult";
 import { useEffect, useState } from "react";
 import "./SearchBar.css";
-import WishList from "./WishList";
 
 const SearchBar = ({ wishList, addBook, deleteBook }) => {
   const [input, setInput] = useState("");
@@ -62,14 +61,7 @@ const SearchBar = ({ wishList, addBook, deleteBook }) => {
           //No books, show loading text
           books?.length !== 0 ? (
             <>
-              <div className="search-wish__container">
-                <div className="search-result__container">
-                  <SearchResult books={books} addBook={addBook} />
-                </div>
-                <div className="search-wish-list__container">
-                  <WishList wishList={wishList} deleteBook={deleteBook} />
-                </div>
-              </div>
+              <SearchResult books={books} addBook={addBook} />
             </>
           ) : (
             <h3 className="search_loading">Loading...</h3>
