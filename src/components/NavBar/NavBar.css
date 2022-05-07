@@ -1,7 +1,7 @@
 .navbar__container {
     display:flex;
     padding: 30px;
-    background-color: rgb(186, 216, 243);
+    background-color: rgb(175, 215, 255);
 }
 
 .navbar__link{

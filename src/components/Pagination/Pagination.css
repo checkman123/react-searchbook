@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items:stretch ;
     margin-bottom: 30px;
+    gap: 10px;
 
 }
 
@@ -11,4 +12,17 @@
     flex-direction: row;
     justify-content: center;
     gap:30px
+}
+
+.pagination__container .button-set button{
+    padding: 5px;
+}
+
+.button-set {
+    align-items: center;
+}
+
+.pagination__container svg{
+    height: 20px;
+    width: 20px;
 }

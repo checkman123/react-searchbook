@@ -1,8 +1,9 @@
 .search-box__container{
     display:flex;
     flex-direction: row;
-    margin:20px 10px 0px 10px;
+    margin:20px 10px 20px 10px;
     gap: 20px;
+    justify-content: center;
 }
 
 .search-box__input{
@@ -10,4 +11,8 @@
     font-size: 20px;
     height:30px;
     width: 400px;
+}
+
+.search-box__button{
+    font-size: 20px;
 }
