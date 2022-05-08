@@ -1,8 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import BookCard from "./BookCard/BookCard";
 import "./SearchBar.css";
 
-const SearchBar = ({ books, addBook, handleSubmit }) => {
+const SearchBar = () => {
+  const books = useSelector((state) => state.searchbookSlice.searchResult);
   return (
     <>
       <div className="search__container">
@@ -14,7 +16,6 @@ const SearchBar = ({ books, addBook, handleSubmit }) => {
                 <BookCard
                   key={book.id}
                   book={{ id: book.id, ...book.volumeInfo }}
-                  addBook={addBook}
                 />
               ))}
             </>

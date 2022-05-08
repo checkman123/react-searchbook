@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import searchbookReducer from "./slices/searchbookSlice";
 
-export default configureStore({
+const store = configureStore({
   reducer: {
     searchbookSlice: searchbookReducer,
   },
 });
+
+export default store;

@@ -5,7 +5,7 @@ export const searchbookSlice = createSlice({
   name: "searchbookSlice",
   initialState: {
     searchResult: [],
-    wishlist: [],
+    wishList: [],
     totalItems: 0,
     currentPage: 1,
     keyword: "",
@@ -15,20 +15,21 @@ export const searchbookSlice = createSlice({
       state.searchResult = action.payload;
     },
     setWishList: (state, action) => {
-      state.wishlist = action.payload;
+      state.wishList = action.payload;
     },
     addWishList: (state, action) => {
-      const prev = state.wishlist;
+      const prev = state.wishList;
       const bookMap = {}; //hashMap {[id]: book}
-      const nextWishlist = [action.payload, ...prev];
-      nextWishlist.forEach((book) => {
+      const nextwishList = [action.payload, ...prev];
+      nextwishList.forEach((book) => {
         bookMap[book.id] = book;
       });
-      state.wishlist = Object.values(bookMap);
+
+      state.wishList = Object.values(bookMap);
     },
     deleteWishList: (state, action) => {
-      state.wishlist = state.wishlist.filter(
-        (item) => item.id !== action.payload
+      state.wishList = state.wishList.filter(
+        (item) => item.id !== action.payload.id
       );
     },
     setTotalItems: (state, action) => {

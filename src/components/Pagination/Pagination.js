@@ -6,14 +6,7 @@ import {
 } from "../../redux/slices/searchbookSlice";
 import "./Pagination.css";
 
-const Pagination = ({
-  children,
-  /*,
-  totalItems,
-  currentPage,
-  handleChangePage,*/
-  itemsPerPage,
-}) => {
+const Pagination = ({ children, itemsPerPage }) => {
   //console.log("children",<div></div>,children)//children is just JSX
   const dispatch = useDispatch();
 
@@ -21,6 +14,7 @@ const Pagination = ({
   const totalItems = useSelector((state) => state.searchbookSlice.totalItems);
 
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   const handleClickPrev = () => {
     if (currentPage <= 1) {
       return;

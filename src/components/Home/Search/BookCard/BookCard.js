@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addWishList } from "../../../../redux/slices/searchbookSlice";
 import "./BookCard.css";
 
-const bookCard = ({ book, addBook }) => {
+const BookCard = ({ book, addBook }) => {
+  const dispatch = useDispatch();
   const addToWishList = () => {
-    addBook(book);
+    dispatch(addWishList(book));
   };
 
   const image = book?.imageLinks?.thumbnail;
@@ -37,4 +40,4 @@ const bookCard = ({ book, addBook }) => {
   );
 };
 
-export default bookCard;
+export default BookCard;

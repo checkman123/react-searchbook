@@ -1,9 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteWishList } from "../../redux/slices/searchbookSlice";
 import "./WishCard.css";
 
-const WishCard = ({ book, deleteBook }) => {
+const WishCard = ({ book }) => {
+  const dispatch = useDispatch();
+
   const deleteFromWishList = () => {
-    deleteBook(book);
+    dispatch(deleteWishList(book));
   };
 
   let pathname = window.location.pathname;

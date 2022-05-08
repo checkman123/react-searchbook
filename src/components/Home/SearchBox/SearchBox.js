@@ -45,7 +45,6 @@ const Searchbox = () => {
   };
   const handleClick = (e) => {
     e.preventDefault();
-    //handleSubmit(input);
     dispatch(setKeyword(input));
     dispatch(setCurrentPage(1));
   };
