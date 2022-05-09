@@ -9,7 +9,7 @@
     background-color: rgb(194, 194, 194);
 }
 
-li:nth-child(even){
+.wish-list__container li:nth-child(even){
     background-color: rgb(235, 235, 235);
 }
 

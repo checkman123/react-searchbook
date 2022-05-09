@@ -9,7 +9,7 @@ const SearchBar = () => {
     <>
       <div className="search__container">
         {
-          //No books, show loading text
+          //No books yet, show loading text
           books?.length !== 0 ? (
             <>
               {books?.map((book) => (
@@ -21,6 +21,18 @@ const SearchBar = () => {
             </>
           ) : (
             <h3 className="search_loading">Loading...</h3>
+          )
+        }
+
+        {
+          //No books found
+          books === null && (
+            <>
+              <h3 className="search_loading">No Result Found</h3>
+              <h3 className="search_loading">
+                Please enter valid search title
+              </h3>
+            </>
           )
         }
       </div>

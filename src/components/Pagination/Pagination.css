@@ -26,3 +26,50 @@
     height: 20px;
     width: 20px;
 }
+
+.pagination {
+    justify-content: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    display:flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  ul.pagination li {
+    display: inline-block;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    font-size:20px;
+  }
+  
+  ul.pagination li a {
+    display: block;
+    text-decoration: none;
+    color: #337ab7;
+    padding: 10px 15px 10px 15px;
+  }
+  
+  ul.pagination li.active a {
+    color: white;
+  }
+  ul.pagination li.active {
+    background-color: #337ab7;
+  }
+  
+  ul.pagination li a:hover{
+    background-color: rgb(230, 230, 230);
+  }
+
+  ul.pagination li.page-item.selected {
+    background-color: rgb(210, 210, 210);
+  }
+  
+  .page-selection {
+    width: 48px;
+    height: 30px;
+    color: #337ab7;
+  }
