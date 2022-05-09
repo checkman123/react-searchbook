@@ -96,7 +96,6 @@ const Searchbox = () => {
 
         //set the suggestion and show it
         setFilteredSuggestions(filtered);
-        setShowSuggestions(true);
       })();
     }, 300),
     [dispatch]
@@ -125,15 +124,16 @@ const Searchbox = () => {
     e.preventDefault();
     //reset
     setFilteredSuggestions([]);
-    setShowSuggestions(false);
     setInput(e.currentTarget.innerText);
     dispatch(setKeyword(e.currentTarget.innerText));
+    setShowSuggestions(false);
+    document.getElementById("search-box").blur();
   };
 
   const onFocus = () => {
     setShowSuggestions(true);
   };
-  const onBlur = (e) => {
+  const onBlur = () => {
     setShowSuggestions(false);
   };
 
@@ -141,6 +141,7 @@ const Searchbox = () => {
     <div className="search-box__container">
       <div className="input__container">
         <input
+          id="search-box"
           className="search-box__input"
           type="text"
           value={input}
