@@ -102,3 +102,7 @@
     width: 100%;
   }
 
+
+  .input__container{
+    flex-direction: column;
+  }
