@@ -42,9 +42,15 @@ const HomePage = () => {
       } else {
         const result = await searchbook(keyword, currentPage, 5);
         if (result?.data?.totalItems !== undefined) {
+          console.log("setTotalItems");
+          dispatch(setTotalItems(result.data.totalItems));
         }
         if (result?.data?.items !== undefined) {
+          console.log("setSearchResult");
           dispatch(setSearchResult(result.data.items));
+        } else {
+          //No result found in search
+          dispatch(setSearchResult(null));
         }
 
         window.scrollTo(0, 0);
