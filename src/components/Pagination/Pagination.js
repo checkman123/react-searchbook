@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   decrementCurrentPage,
@@ -36,6 +36,10 @@ const Pagination = ({ children, itemsPerPage }) => {
   const handleClickPage = (e) => {
     dispatch(setCurrentPage(e.selected + 1));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   console.log("currentPage", currentPage);
   return (
