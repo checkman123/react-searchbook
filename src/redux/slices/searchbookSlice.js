@@ -12,7 +12,12 @@ export const searchbookSlice = createSlice({
   },
   reducers: {
     setSearchResult: (state, action) => {
-      state.searchResult = action.payload;
+      //Find unique id's in an array.
+      const uniqueArray = action.payload.filter(
+        (item, index, arrSelf) =>
+          arrSelf.findIndex((item2) => item2.id === item.id) === index
+      );
+      state.searchResult = uniqueArray;
     },
     setWishList: (state, action) => {
       state.wishList = action.payload;
